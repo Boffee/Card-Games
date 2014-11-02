@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NDR-dt-Gb2">
+    <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ubr-6j-IG0">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="NDR-dt-Gb2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Haq-6Z-PPk"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="LNl-mq-k79">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="tZu-tC-l92" kind="relationship" relationship="viewControllers" id="4Zv-6P-X5n"/>
+                        <segue destination="Pqk-bW-52t" kind="relationship" relationship="viewControllers" id="Xch-HL-sAz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FWD-FF-i6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-228" y="-15"/>
+        </scene>
+        <!--Set Game-->
+        <scene sceneID="TSX-Zp-2ZY">
+            <objects>
+                <viewController id="Sz1-0y-NAR" customClass="SetCardGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XLb-MC-Jav"/>
+                        <viewControllerLayoutGuide type="bottom" id="8mB-uj-bqi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aZf-5v-ne4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-2S-na8">
+                                <rect key="frame" x="20" y="487" width="280" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="kRy-cN-KBQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bob-b0-XWF">
+                                <rect key="frame" x="20" y="79" width="280" height="400"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Owt-P4-Lue" appends="YES" id="D80-m5-6NG"/>
+                                    <outletCollection property="gestureRecognizers" destination="6IB-F5-pBf" appends="YES" id="5gQ-9x-bkY"/>
+                                    <outletCollection property="gestureRecognizers" destination="RhX-fl-JxY" appends="YES" id="BZa-j8-WTK"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwH-uh-HgD">
+                                <rect key="frame" x="270" y="482" width="30" height="30"/>
+                                <state key="normal" title="Hint">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hint" destination="Sz1-0y-NAR" eventType="touchUpInside" id="keL-oM-Th3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RwH-uh-HgD" firstAttribute="centerY" secondItem="XHu-2S-na8" secondAttribute="centerY" id="4Em-x6-iZy"/>
+                            <constraint firstItem="Bob-b0-XWF" firstAttribute="leading" secondItem="aZf-5v-ne4" secondAttribute="leading" constant="20" symbolic="YES" id="K82-Te-zq7"/>
+                            <constraint firstItem="Bob-b0-XWF" firstAttribute="top" secondItem="XLb-MC-Jav" secondAttribute="bottom" constant="15" id="Ne1-M9-VKa"/>
+                            <constraint firstItem="RwH-uh-HgD" firstAttribute="trailing" secondItem="XHu-2S-na8" secondAttribute="trailing" id="Nin-Hc-aF2"/>
+                            <constraint firstItem="Bob-b0-XWF" firstAttribute="trailing" secondItem="XHu-2S-na8" secondAttribute="trailing" id="OPT-No-S20"/>
+                            <constraint firstAttribute="trailing" secondItem="Bob-b0-XWF" secondAttribute="trailing" constant="20" symbolic="YES" id="ekB-Nd-8bf"/>
+                            <constraint firstItem="XHu-2S-na8" firstAttribute="top" secondItem="Bob-b0-XWF" secondAttribute="bottom" constant="8" symbolic="YES" id="ggQ-zB-Hk0"/>
+                            <constraint firstItem="XHu-2S-na8" firstAttribute="leading" secondItem="Bob-b0-XWF" secondAttribute="leading" id="m5f-Gt-J1a"/>
+                            <constraint firstItem="8mB-uj-bqi" firstAttribute="top" secondItem="XHu-2S-na8" secondAttribute="bottom" constant="12" id="zGp-Wp-XmU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Set Game" id="9PD-dC-Wyw">
+                        <barButtonItem key="leftBarButtonItem" title="Re-deal" id="364-M3-qTe">
+                            <connections>
+                                <action selector="restartButton:" destination="Sz1-0y-NAR" id="SL4-wl-vSB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+3 Cards" id="ddn-C0-DoS">
+                            <connections>
+                                <action selector="add3Cards:" destination="Sz1-0y-NAR" id="1e7-Sm-LKd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="BoardView" destination="Bob-b0-XWF" id="GFG-aL-c8z"/>
+                        <outlet property="scoreLabel" destination="XHu-2S-na8" id="wfV-2r-BLf"/>
+                        <outlet property="tapInBoardGesture" destination="Owt-P4-Lue" id="6ie-Lf-FRE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vpA-n1-L9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="6IB-F5-pBf">
+                    <connections>
+                        <action selector="pinchCardViewsIntoPile:" destination="Sz1-0y-NAR" id="0bT-dh-zRQ"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="RhX-fl-JxY">
+                    <connections>
+                        <action selector="moveCardPile:" destination="Sz1-0y-NAR" id="Ccc-UH-qyV"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="Owt-P4-Lue">
+                    <connections>
+                        <action selector="TapCardOnBoard:" destination="Sz1-0y-NAR" id="hWW-9e-7uW"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="902" y="-349"/>
+        </scene>
+        <!--Matching Game-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AI-bD-6gb">
+                                <rect key="frame" x="20" y="487" width="280" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4GG-mk-ZU7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pick a card!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEs-S9-BqE">
+                                <rect key="frame" x="202" y="486" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eh4-s1-xAO">
+                                <rect key="frame" x="20" y="74" width="280" height="405"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KSC-L4-aSE" appends="YES" id="RJd-w2-LLX"/>
+                                    <outletCollection property="gestureRecognizers" destination="oVD-qn-pBw" appends="YES" id="hB5-ly-iQG"/>
+                                    <outletCollection property="gestureRecognizers" destination="0Gk-Uh-okx" appends="YES" id="H9C-Mc-sg4"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7AI-bD-6gb" firstAttribute="leading" secondItem="eh4-s1-xAO" secondAttribute="leading" id="6da-Yj-bbQ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7AI-bD-6gb" secondAttribute="bottom" constant="12" id="JRU-JX-9iV"/>
+                            <constraint firstItem="wEs-S9-BqE" firstAttribute="baseline" secondItem="7AI-bD-6gb" secondAttribute="baseline" id="KKL-90-Zvc"/>
+                            <constraint firstAttribute="trailing" secondItem="eh4-s1-xAO" secondAttribute="trailing" constant="20" symbolic="YES" id="NwO-GM-Tjt"/>
+                            <constraint firstItem="wEs-S9-BqE" firstAttribute="trailing" secondItem="7AI-bD-6gb" secondAttribute="trailing" id="SXg-r2-rGG"/>
+                            <constraint firstItem="eh4-s1-xAO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="bLW-2I-M20"/>
+                            <constraint firstItem="7AI-bD-6gb" firstAttribute="top" secondItem="eh4-s1-xAO" secondAttribute="bottom" constant="8" symbolic="YES" id="cpq-pG-NNB"/>
+                            <constraint firstItem="wEs-S9-BqE" firstAttribute="trailing" secondItem="eh4-s1-xAO" secondAttribute="trailing" id="qL6-hA-7ZJ"/>
+                            <constraint firstItem="eh4-s1-xAO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="sdu-Qf-wda"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Matching Game" id="jvD-Nd-2Hf">
+                        <barButtonItem key="leftBarButtonItem" title="Re-deal" id="5VP-1l-cdV">
+                            <connections>
+                                <action selector="restartButton:" destination="vXZ-lx-hvc" id="wrI-U0-93F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="BoardView" destination="eh4-s1-xAO" id="qOC-OK-CRO"/>
+                        <outlet property="displayMove" destination="wEs-S9-BqE" id="Bbb-DR-6Ol"/>
+                        <outlet property="scoreLabel" destination="7AI-bD-6gb" id="UZF-u3-TqM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="0Gk-Uh-okx">
+                    <connections>
+                        <action selector="moveCardPile:" destination="vXZ-lx-hvc" id="gUZ-bT-RKO"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="KSC-L4-aSE">
+                    <connections>
+                        <action selector="TapCardOnBoard:" destination="vXZ-lx-hvc" id="QMV-Nc-9bk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="oVD-qn-pBw">
+                    <connections>
+                        <action selector="pinchCardViewsIntoPile:" destination="vXZ-lx-hvc" id="ZWD-jQ-57a"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="902" y="330"/>
+        </scene>
+        <!--Set Cards-->
+        <scene sceneID="dq5-mv-vhs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tZu-tC-l92" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Set Cards" image="setCards" id="cWP-51-et0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PYq-Xr-GIY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Sz1-0y-NAR" kind="relationship" relationship="rootViewController" id="XZX-KZ-dkb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBH-Ow-99R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376" y="-349"/>
+        </scene>
+        <!--Playing Card-->
+        <scene sceneID="gu2-dc-y9u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pqk-bW-52t" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Playing Card" image="playingCards" id="I7g-Ez-yB6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ToB-ed-6zx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="k4Q-CY-4w9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yf2-Kw-qev" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376" y="330"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="playingCards" width="25" height="25"/>
+        <image name="setCards" width="25" height="25"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
